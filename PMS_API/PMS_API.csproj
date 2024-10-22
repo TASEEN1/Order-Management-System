@@ -1,0 +1,215 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Report\Asset_Repair_ReportDatails.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\Asset Details.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\AttributeFrom.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\Buyer&amp;ShiftWise_ProductionReport.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyPlaningReport.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\Daily_P&amp;Q_Machine_Planning.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\deliveryChallanReport.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderReceivedReportD2D.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\Order_Summary_report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\Padding_Raw_Material_Report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\ProductionAndDeliveryStatus.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\ProductionReport.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
+    <Content Remove="wwwroot\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\Asset_DtailsDataSet.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\Asset_DtailsDataSet.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\Asset_DtailsDataSet.xss" />
+    <Content Remove="wwwroot\ReportDataSet\AsstDataSet.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\AsstDataSet.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\AsstDataSet.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\AsstDataSet.xss" />
+    <Content Remove="wwwroot\ReportDataSet\OrdDataSet.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\OrdDataSet.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\OrdDataSet.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\OrdDataSet.xss" />
+    <Content Remove="wwwroot\ReportDataSet\padding_type_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\padding_type_DataSet.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\padding_type_DataSet.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\padding_type_DataSet.xss" />
+    <Content Remove="wwwroot\ReportDataSet\test.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\test.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\test.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\test.xss" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_Complete_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_Complete_DataSet.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_Complete_DataSet.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_Complete_DataSet.xss" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_DataSet.xsc" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_DataSet.xsd" />
+    <Content Remove="wwwroot\ReportDataSet\Work_order_DataSet.xss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="wwwroot\ReportDataSet\AssetDataSet.Designer.cs" />
+    <Compile Include="wwwroot\ReportDataSet\Asset_DtailsDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\ReportDataSet\AsstDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\ReportDataSet\OrdDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OrdDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\ReportDataSet\padding_type_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\ReportDataSet\test.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\ReportDataSet\Work_order_Complete_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Work_order_Complete_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\ReportDataSet\Work_order_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset_Repair_ReportDatails.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\AttributeFrom.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Buyer&amp;ShiftWise_ProductionReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyPlaningReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Daily_P&amp;Q_Machine_Planning.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\deliveryChallanReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderReceivedReportD2D.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Order_Summary_report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Padding_Raw_Material_Report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\ProductionAndDeliveryStatus.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\ProductionReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CoreApiResponse" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.21" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMS_DAL\PMS_DAL.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\ReportDataSet\AssetDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssetDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\ReportDataSet\AssetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssetDataSet.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CuttingDataSet.xsd</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\ReportDataSet\AssetDataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\AssetDataSet.xsd" />
+    <None Include="wwwroot\ReportDataSet\AssetDataSet.xss" />
+    <None Include="wwwroot\ReportDataSet\Asset_DtailsDataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\Asset_DtailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Asset_DtailsDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\Asset_DtailsDataSet.xss" />
+    <None Include="wwwroot\ReportDataSet\AsstDataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\AsstDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>AsstDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\AsstDataSet.xss" />
+    <None Include="wwwroot\ReportDataSet\OrdDataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\OrdDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>OrdDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\OrdDataSet.xss" />
+    <None Include="wwwroot\ReportDataSet\padding_type_DataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\padding_type_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>padding_type_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\padding_type_DataSet.xss" />
+    <None Include="wwwroot\ReportDataSet\test.xsc" />
+    <None Include="wwwroot\ReportDataSet\test.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>test.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\test.xss" />
+    <None Include="wwwroot\ReportDataSet\Work_order_Complete_DataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\Work_order_Complete_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Work_order_Complete_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\Work_order_Complete_DataSet.xss" />
+    <None Include="wwwroot\ReportDataSet\Work_order_DataSet.xsc" />
+    <None Include="wwwroot\ReportDataSet\Work_order_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Work_order_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\ReportDataSet\Work_order_DataSet.xss" />
+    <None Include="wwwroot\Report\Cutting_Report\CuttingDataSet.xsc" />
+    <None Include="wwwroot\Report\Cutting_Report\CuttingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="wwwroot\Report\Cutting_Report\CuttingDataSet.xss" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_CutSummary_Cut_Date_D2D.rdlc" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_Cutting_Closing_Style_Wise_Report.rdlc" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_Cut_Style_Country_Rpt.rdlc" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_DailyCuttingRpt.rdlc" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_LayWise_Rpt.rdlc" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_Style_PO_Wise_Cut_To_Input_Qty.rdlc" />
+    <None Include="wwwroot\Report\Cutting_Report\dg_Style_Wise_Cut_To_Input_Qty.rdlc" />
+  </ItemGroup>
+</Project>

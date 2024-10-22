@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1751EC9-EFC7-4856-8211-CE07B185A6DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ReportServeice</RootNamespace>
+    <AssemblyName>ReportServeice</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssetDetailsMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Asset_Details_Repair.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Asset_Details_Repair.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Asset_DtailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AsstDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="padding_type_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Work_order_Complete_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Work_order_Complete_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Work_order_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AssetDetailsMaster_Rpt.rdlc" />
+    <EmbeddedResource Include="AssetDetailsSummary.rdlc" />
+    <EmbeddedResource Include="Asset_Repair_ReportDatails.rdlc" />
+    <EmbeddedResource Include="AttributeFrom.rdlc" />
+    <EmbeddedResource Include="Buyer&amp;ShiftWise_ProductionReport.rdlc" />
+    <EmbeddedResource Include="DailyPlaningReport.rdlc" />
+    <EmbeddedResource Include="DailyProductionSummary.rdlc" />
+    <EmbeddedResource Include="Daily_P&amp;Q_Machine_Planning.rdlc" />
+    <EmbeddedResource Include="deliveryChallanReport.rdlc" />
+    <EmbeddedResource Include="OrderReceivedReportD2D.rdlc" />
+    <EmbeddedResource Include="OrderWiseRpt.rdlc" />
+    <EmbeddedResource Include="Order_Summary_report.rdlc" />
+    <EmbeddedResource Include="Padding_Raw_Material_Report.rdlc" />
+    <EmbeddedResource Include="ProductionAndDeliveryStatus.rdlc" />
+    <EmbeddedResource Include="ProductionReport.rdlc" />
+    <EmbeddedResource Include="Production_Summary.rdlc" />
+    <EmbeddedResource Include="Proforma_Invoice.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Asset Details.rdlc" />
+    <EmbeddedResource Include="ScheduledMaintenance Report.rdlc" />
+    <EmbeddedResource Include="StyleWiseProductionReport.rdlc" />
+    <EmbeddedResource Include="WorkOrderFormate2.rdlc" />
+    <EmbeddedResource Include="work_order_Rpt.rdlc" />
+    <None Include="AssetDetailsMasterDataSet.xsc">
+      <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AssetDetailsMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssetDetailsMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AssetDetailsMasterDataSet.xss">
+      <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_Details_Repair.xsc">
+      <DependentUpon>Asset_Details_Repair.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_Details_Repair.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Asset_Details_Repair.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Asset_Details_Repair.xss">
+      <DependentUpon>Asset_Details_Repair.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_DtailsDataSet.xsc">
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_DtailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Asset_DtailsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Asset_DtailsDataSet.xss">
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AsstDataSet.xsc">
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AsstDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AsstDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AsstDataSet.xss">
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OrdDataSet.xsc">
+      <DependentUpon>OrdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OrdDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="OrdDataSet.xss">
+      <DependentUpon>OrdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="padding_type_DataSet.xsc">
+      <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="padding_type_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>padding_type_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="padding_type_DataSet.xss">
+      <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="test.xsc">
+      <DependentUpon>test.xsd</DependentUpon>
+    </None>
+    <None Include="test.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>test.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="test.xss">
+      <DependentUpon>test.xsd</DependentUpon>
+    </None>
+    <None Include="Work_order_Complete_DataSet.xsc">
+      <DependentUpon>Work_order_Complete_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Work_order_Complete_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Work_order_Complete_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Work_order_Complete_DataSet.xss">
+      <DependentUpon>Work_order_Complete_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Work_order_DataSet.xsc">
+      <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Work_order_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Work_order_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Work_order_DataSet.xss">
+      <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
