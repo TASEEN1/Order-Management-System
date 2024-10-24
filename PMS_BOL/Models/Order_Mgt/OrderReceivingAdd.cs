@@ -12,7 +12,6 @@ namespace PMS_BOL.Models.OrderMgt
         public int ComID { get; set; }
         public int Id { get; set; }
         public int Ref_no { get; set; }
-
         public int Customer { get; set; }
         public int Buyer { get; set; }
         public string style_no { get; set; }

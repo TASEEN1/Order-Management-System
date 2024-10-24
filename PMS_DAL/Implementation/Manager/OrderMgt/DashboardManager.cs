@@ -35,6 +35,16 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
         }
+        public async Task<DataTable> GetDashboard_All_summary_View(string sessionUser, int sessionUser_compId)
+        {
+
+            var query = $"dg_dashboard_all_summary '{sessionUser}',{sessionUser_compId}";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+            return data;
+        }
+
+
+
 
         public async Task<object> GetDashboard_Daily_View_Grapdata(string sessionUser, int sessionUser_compId)
         {

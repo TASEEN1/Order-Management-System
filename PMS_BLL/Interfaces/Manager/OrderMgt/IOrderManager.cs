@@ -69,10 +69,10 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         //----------------------OMS Customer ------------------------//
 
-        public Task<string> OMS_CustomerSave(List<customerSave> app);
-        public Task<string> OMS_CustomerUpdate(List<customerSave> app);
-        public Task<DataTable> OMS_GetCustomerType();
-        public Task<DataTable> OMS_GetcustomerView();
+        //public Task<string> OMS_CustomerSave(List<customerSave> app);
+        //public Task<string> OMS_CustomerUpdate(List<customerSave> app);
+        //public Task<DataTable> OMS_GetCustomerType();
+        //public Task<DataTable> OMS_GetcustomerView();
 
 
 

@@ -329,32 +329,32 @@ namespace PMS_API.Controllers.OrderMgt
         //----------------------OMS Customer------------------------//
 
 
-        [HttpPost]
-        public async Task<IActionResult> OMS_CustomerSave(List<customerSave> app)
-        {
-            var data = await _globalMaster.orderManager.OMS_CustomerSave(app);
-            return Ok(new { message = data });
+        //[HttpPost]
+        //public async Task<IActionResult> OMS_CustomerSave(List<customerSave> app)
+        //{
+        //    var data = await _globalMaster.orderManager.OMS_CustomerSave(app);
+        //    return Ok(new { message = data });
 
-        }
-        [HttpPut]
-        public async Task<IActionResult> OMS_CustomerUpdate(List<customerSave> app)
-        {
-            var data = await _globalMaster.orderManager.OMS_CustomerUpdate(app);
-            return Ok(new { message = data });
+        //}
+        //[HttpPut]
+        //public async Task<IActionResult> OMS_CustomerUpdate(List<customerSave> app)
+        //{
+        //    var data = await _globalMaster.orderManager.OMS_CustomerUpdate(app);
+        //    return Ok(new { message = data });
 
-        }
-        [HttpGet]
-        public async Task<IActionResult> OMS_GetCustomerType()
-        {
-            var data = await _globalMaster.orderManager.OMS_GetCustomerType();
-            return Ok(data);
-        }
-        [HttpGet]
-        public async Task<IActionResult> OMS_GetcustomerView()
-        {
-            var data = await _globalMaster.orderManager.OMS_GetcustomerView();
-            return Ok(data);
-        }
+        //}
+        //[HttpGet]
+        //public async Task<IActionResult> OMS_GetCustomerType()
+        //{
+        //    var data = await _globalMaster.orderManager.OMS_GetCustomerType();
+        //    return Ok(data);
+        //}
+        //[HttpGet]
+        //public async Task<IActionResult> OMS_GetcustomerView()
+        //{
+        //    var data = await _globalMaster.orderManager.OMS_GetcustomerView();
+        //    return Ok(data);
+        //}
 
 
     }

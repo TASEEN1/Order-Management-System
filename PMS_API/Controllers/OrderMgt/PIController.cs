@@ -60,12 +60,7 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetPIcustomer()
-        //{
-        //    var data = await _globalMaster.piManager.GetPIcustomer();
-        //    return Ok(data);
-        //}
+       
 
         [HttpGet]
         public async Task<IActionResult> GetPI_ProcessType()
@@ -80,12 +75,7 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetPIstyle(int custId)
-        //{
-        //    var data = await _globalMaster.piManager.GetPIstyle( custId);
-        //    return Ok(data);
-        //}
+      
         [HttpGet]
         public async Task<IActionResult> GetBookingRefForPiGenerate(int CustomerID)
         {

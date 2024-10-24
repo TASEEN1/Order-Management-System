@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Implementation\Repository\**" />
+    <EmbeddedResource Remove="Implementation\Repository\**" />
+    <None Remove="Implementation\Repository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EF.Core.Repository" Version="1.0.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.21" />
@@ -22,10 +28,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PMS_BLL\PMS_BLL.csproj" />
     <ProjectReference Include="..\PMS_BOL\PMS_BOL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Implementation\Repository\" />
   </ItemGroup>
 
 </Project>

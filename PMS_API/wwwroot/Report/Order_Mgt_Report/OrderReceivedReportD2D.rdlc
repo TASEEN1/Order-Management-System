@@ -2009,7 +2009,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>="From-" &amp; Format(First(Fields!or_created_date.Value, "DataSet1"), "dd-MMM-yyyy") &amp; " To-" &amp; Format(Today(), "dd-MMM-yyyy")</Value>
+                      <Value>="From-" &amp; Format(Fields!or_created_date.Value, "dd-MMM-yyyy") &amp; " To-" &amp; Format(Fields!or_created_date.Value, "dd-MMM-yyyy")</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>9pt</FontSize>
