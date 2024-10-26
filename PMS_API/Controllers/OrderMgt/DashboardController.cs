@@ -21,6 +21,12 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.dashboardManager.GetDashboard_Daily_View(sessionUser, sessionUser_compId);
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetDashboard_All_summary_View(string sessionUser, int sessionUser_compId)
+        {
+            var data = await _globalMaster.dashboardManager.GetDashboard_All_summary_View(sessionUser, sessionUser_compId);
+            return Ok(data);
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetDashboard_Daily_View_Grapdata(string sessionUser, int sessionUser_compId)

@@ -94,7 +94,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -138,11 +137,6 @@
     <Content Update="wwwroot\ReportDataSet\AssetDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AssetDataSet.Designer.cs</LastGenOutput>
-    </Content>
-    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CuttingDataSet.xsd</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -198,18 +192,5 @@
       <Generator>MSDataSetGenerator</Generator>
     </None>
     <None Include="wwwroot\ReportDataSet\Work_order_DataSet.xss" />
-    <None Include="wwwroot\Report\Cutting_Report\CuttingDataSet.xsc" />
-    <None Include="wwwroot\Report\Cutting_Report\CuttingDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="wwwroot\Report\Cutting_Report\CuttingDataSet.xss" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_CutSummary_Cut_Date_D2D.rdlc" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_Cutting_Closing_Style_Wise_Report.rdlc" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_Cut_Style_Country_Rpt.rdlc" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_DailyCuttingRpt.rdlc" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_LayWise_Rpt.rdlc" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_Style_PO_Wise_Cut_To_Input_Qty.rdlc" />
-    <None Include="wwwroot\Report\Cutting_Report\dg_Style_Wise_Cut_To_Input_Qty.rdlc" />
   </ItemGroup>
 </Project>

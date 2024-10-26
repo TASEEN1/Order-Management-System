@@ -106,7 +106,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
       
         public async Task<DataTable> GetcustomerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ct_customer_type  from dg_dimtbl_customer inner join dg_dimtbl_customer_type on c_customer_type = ct_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ct_customer_type \nfrom dg_ms_customer inner join dg_ms_customer_type on c_customer_type = ct_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }
@@ -132,7 +132,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetCustomerType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select ct_id, ct_customer_type from dg_dimtbl_customer_type", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ct_id, ct_customer_type from dg_ms_customer_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetOrderType()
@@ -308,7 +308,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (customerSave ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_save", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_ms_customer_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@customer_type", ord.customer_Type);
@@ -424,7 +424,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (customerSave ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_update", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_ms_customer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@custId", ord.customerId);
@@ -828,128 +828,128 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
 
 
-        public async Task<string> OMS_CustomerSave(List<customerSave> app)
-        {
-            string message = string.Empty;
-            await _dg_Oder_Mgt.OpenAsync();
+        //public async Task<string> OMS_CustomerSave(List<customerSave> app)
+        //{
+        //    string message = string.Empty;
+        //    await _dg_Oder_Mgt.OpenAsync();
 
 
-            try
-            {
-                foreach (customerSave ord in app)
-                {
-                    SqlCommand cmd = new SqlCommand("dg_ms_customer_save", _dg_Oder_Mgt);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
-                    cmd.Parameters.AddWithValue("@customer_type", ord.customer_Type);
-                    cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
-                    cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
-                    cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
-                    cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
-                    cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
-                    cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
-                    cmd.Parameters.AddWithValue("@c_tnc_letterOfCredit", ord.c_tnc_letterOfCredit);
-                    cmd.Parameters.AddWithValue("@c_tnc_advisingBank", ord.c_tnc_advisingBank);
-                    cmd.Parameters.AddWithValue("@c_tnc_negoBankNPeriod ", ord.c_tnc_negoBankNPeriod);
-                    cmd.Parameters.AddWithValue("@c_tnc_delivery", ord.c_tnc_delivery);
-                    cmd.Parameters.AddWithValue("@c_tnc_deliveryTerms", ord.c_tnc_deliveryTerms);
-                    cmd.Parameters.AddWithValue("@c_tnc_paymentNInterest", ord.c_tnc_paymentNInterest);
-                    cmd.Parameters.AddWithValue("@c_tnc_bankCharges", ord.c_tnc_bankCharges);
-                    cmd.Parameters.AddWithValue("@c_tnc_inspection", ord.c_tnc_inspection);
-                    cmd.Parameters.AddWithValue("@c_tnc_BTMACertificate", ord.c_tnc_BTMACertificate);
-                    cmd.Parameters.AddWithValue("@c_tnc_maturity", ord.c_tnc_maturity);
-                    cmd.Parameters.AddWithValue("@c_tnc_payment", ord.c_tnc_payment);
-                    cmd.Parameters.AddWithValue("@c_tnc_cashIncentive ", ord.c_tnc_cashIncentive);
-                    cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
-                    cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
-                    cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
-                    cmd.Parameters.AddWithValue("@createdby", ord.createdby);
-                    cmd.Parameters.AddWithValue("@c_tnc_concatedFromFE", ord.c_tnc_concatedFromFE);
-                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
-                    await cmd.ExecuteNonQueryAsync();
-                    message = (string)cmd.Parameters["@ERROR"].Value;
-                }
+        //    try
+        //    {
+        //        foreach (customerSave ord in app)
+        //        {
+        //            SqlCommand cmd = new SqlCommand("dg_ms_customer_save", _dg_Oder_Mgt);
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
+        //            cmd.Parameters.AddWithValue("@customer_type", ord.customer_Type);
+        //            cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
+        //            cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
+        //            cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
+        //            cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
+        //            cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
+        //            cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
+        //            cmd.Parameters.AddWithValue("@c_tnc_letterOfCredit", ord.c_tnc_letterOfCredit);
+        //            cmd.Parameters.AddWithValue("@c_tnc_advisingBank", ord.c_tnc_advisingBank);
+        //            cmd.Parameters.AddWithValue("@c_tnc_negoBankNPeriod ", ord.c_tnc_negoBankNPeriod);
+        //            cmd.Parameters.AddWithValue("@c_tnc_delivery", ord.c_tnc_delivery);
+        //            cmd.Parameters.AddWithValue("@c_tnc_deliveryTerms", ord.c_tnc_deliveryTerms);
+        //            cmd.Parameters.AddWithValue("@c_tnc_paymentNInterest", ord.c_tnc_paymentNInterest);
+        //            cmd.Parameters.AddWithValue("@c_tnc_bankCharges", ord.c_tnc_bankCharges);
+        //            cmd.Parameters.AddWithValue("@c_tnc_inspection", ord.c_tnc_inspection);
+        //            cmd.Parameters.AddWithValue("@c_tnc_BTMACertificate", ord.c_tnc_BTMACertificate);
+        //            cmd.Parameters.AddWithValue("@c_tnc_maturity", ord.c_tnc_maturity);
+        //            cmd.Parameters.AddWithValue("@c_tnc_payment", ord.c_tnc_payment);
+        //            cmd.Parameters.AddWithValue("@c_tnc_cashIncentive ", ord.c_tnc_cashIncentive);
+        //            cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
+        //            cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
+        //            cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
+        //            cmd.Parameters.AddWithValue("@createdby", ord.createdby);
+        //            cmd.Parameters.AddWithValue("@c_tnc_concatedFromFE", ord.c_tnc_concatedFromFE);
+        //            cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+        //            cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+        //            await cmd.ExecuteNonQueryAsync();
+        //            message = (string)cmd.Parameters["@ERROR"].Value;
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
-            finally
-            {
-                _dg_Oder_Mgt.Close();
-            }
-            return message;
-        }
-
-
-
-        public async Task<string> OMS_CustomerUpdate(List<customerSave> app)
-        {
-            string message = string.Empty;
-            await _dg_Oder_Mgt.OpenAsync();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.ToString();
+        //    }
+        //    finally
+        //    {
+        //        _dg_Oder_Mgt.Close();
+        //    }
+        //    return message;
+        //}
 
 
-            try
-            {
-                foreach (customerSave ord in app)
-                {
-                    SqlCommand cmd = new SqlCommand("dg_ms_customer_update", _dg_Oder_Mgt);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
-                    cmd.Parameters.AddWithValue("@custId", ord.customerId);
-                    cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
-                    cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
-                    cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
-                    cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
-                    cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
-                    cmd.Parameters.AddWithValue("@c_tnc_letterOfCredit", ord.c_tnc_letterOfCredit);
-                    cmd.Parameters.AddWithValue("@c_tnc_advisingBank", ord.c_tnc_advisingBank);
-                    cmd.Parameters.AddWithValue("@c_tnc_negoBankNPeriod ", ord.c_tnc_negoBankNPeriod);
-                    cmd.Parameters.AddWithValue("@c_tnc_delivery", ord.c_tnc_delivery);
-                    cmd.Parameters.AddWithValue("@c_tnc_deliveryTerms", ord.c_tnc_deliveryTerms);
-                    cmd.Parameters.AddWithValue("@c_tnc_paymentNInterest", ord.c_tnc_paymentNInterest);
-                    cmd.Parameters.AddWithValue("@c_tnc_bankCharges", ord.c_tnc_bankCharges);
-                    cmd.Parameters.AddWithValue("@c_tnc_inspection", ord.c_tnc_inspection);
-                    cmd.Parameters.AddWithValue("@c_tnc_BTMACertificate", ord.c_tnc_BTMACertificate);
-                    cmd.Parameters.AddWithValue("@c_tnc_maturity", ord.c_tnc_maturity);
-                    cmd.Parameters.AddWithValue("@c_tnc_payment", ord.c_tnc_payment);
-                    cmd.Parameters.AddWithValue("@c_tnc_cashIncentive ", ord.c_tnc_cashIncentive);
-                    cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
-                    cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
-                    cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
-                    cmd.Parameters.AddWithValue("@c_tnc_concatedFromFE", ord.c_tnc_concatedFromFE);
-                    cmd.Parameters.AddWithValue("@updatedBy", ord.UpdatedBy);
-                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
-                    await cmd.ExecuteNonQueryAsync();
-                    message = (string)cmd.Parameters["@ERROR"].Value;
-                }
 
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
-            finally
-            {
-                _dg_Oder_Mgt.Close();
-            }
-            return message;
-        }
-        public async Task<DataTable> OMS_GetCustomerType()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select ct_id, ct_customer_type from dg_ms_customer_type", _dg_Oder_Mgt);
-            return data;
-        }
+        //public async Task<string> OMS_CustomerUpdate(List<customerSave> app)
+        //{
+        //    string message = string.Empty;
+        //    await _dg_Oder_Mgt.OpenAsync();
 
-        public async Task<DataTable> OMS_GetcustomerView()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ct_customer_type from dg_ms_customer  inner join dg_ms_customer_type on c_customer_type = ct_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
-            return data;
-        }
+        //    try
+        //    {
+        //        foreach (customerSave ord in app)
+        //        {
+        //            SqlCommand cmd = new SqlCommand("dg_ms_customer_update", _dg_Oder_Mgt);
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
+        //            cmd.Parameters.AddWithValue("@custId", ord.customerId);
+        //            cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
+        //            cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
+        //            cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
+        //            cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
+        //            cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
+        //            cmd.Parameters.AddWithValue("@c_tnc_letterOfCredit", ord.c_tnc_letterOfCredit);
+        //            cmd.Parameters.AddWithValue("@c_tnc_advisingBank", ord.c_tnc_advisingBank);
+        //            cmd.Parameters.AddWithValue("@c_tnc_negoBankNPeriod ", ord.c_tnc_negoBankNPeriod);
+        //            cmd.Parameters.AddWithValue("@c_tnc_delivery", ord.c_tnc_delivery);
+        //            cmd.Parameters.AddWithValue("@c_tnc_deliveryTerms", ord.c_tnc_deliveryTerms);
+        //            cmd.Parameters.AddWithValue("@c_tnc_paymentNInterest", ord.c_tnc_paymentNInterest);
+        //            cmd.Parameters.AddWithValue("@c_tnc_bankCharges", ord.c_tnc_bankCharges);
+        //            cmd.Parameters.AddWithValue("@c_tnc_inspection", ord.c_tnc_inspection);
+        //            cmd.Parameters.AddWithValue("@c_tnc_BTMACertificate", ord.c_tnc_BTMACertificate);
+        //            cmd.Parameters.AddWithValue("@c_tnc_maturity", ord.c_tnc_maturity);
+        //            cmd.Parameters.AddWithValue("@c_tnc_payment", ord.c_tnc_payment);
+        //            cmd.Parameters.AddWithValue("@c_tnc_cashIncentive ", ord.c_tnc_cashIncentive);
+        //            cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
+        //            cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
+        //            cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
+        //            cmd.Parameters.AddWithValue("@c_tnc_concatedFromFE", ord.c_tnc_concatedFromFE);
+        //            cmd.Parameters.AddWithValue("@updatedBy", ord.UpdatedBy);
+        //            cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+        //            cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+        //            await cmd.ExecuteNonQueryAsync();
+        //            message = (string)cmd.Parameters["@ERROR"].Value;
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.ToString();
+        //    }
+        //    finally
+        //    {
+        //        _dg_Oder_Mgt.Close();
+        //    }
+        //    return message;
+        //}
+        //public async Task<DataTable> OMS_GetCustomerType()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select ct_id, ct_customer_type from dg_ms_customer_type", _dg_Oder_Mgt);
+        //    return data;
+        //}
+
+        //public async Task<DataTable> OMS_GetcustomerView()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ct_customer_type from dg_ms_customer  inner join dg_ms_customer_type on c_customer_type = ct_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
+
+        //    return data;
+        //}
 
     }
 }
